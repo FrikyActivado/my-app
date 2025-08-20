@@ -3,27 +3,6 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-/*function App() {
-  //destrcuturing
-  
-  const [name,setName]=useState("");
-
-  function updateName(){
-    setName("Bryan");
-  }
-
-  return (
-    <div class="card">
-      <button onClick={updateName}>    
-        click me
-      </button>
-      <span> 
-        {"Hola 2 " +  name}
-      </span>
-    </div>
-  )*/
-
-
 
 function App() {
   const [lista, setLista] = useState([]);
