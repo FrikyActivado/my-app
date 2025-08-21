@@ -43,6 +43,32 @@ ul{
   border-radius: 10px;
   text-align: center;
 }
+form{
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+form *{
+  margin-bottom: 10px;
+}
+.subDiv{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: solid white 1px;
+  padding: 5px;
+}
+table{
+  width: 50vw;
+  margin-top: 20px;
+  overflow: scroll;
+}
+thead{
+  text-align: center;
+
+}
 
 @keyframes logo-spin {
   from {
