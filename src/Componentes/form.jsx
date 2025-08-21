@@ -8,13 +8,11 @@ const InitState = {
 function reducer(state, action) {
   switch (action.type) {
     case "ADD_USER":
-      // El reducer siempre debe devolver un nuevo objeto de estado
       return {
         ...state,
         usuarios: [...state.usuarios, action.payload],
       };
     case "DELETE_USER":
-      // Filtra el usuario que se va a eliminar basándose en el nombre de usuario
       return {
         ...state,
         usuarios: state.usuarios.filter(
