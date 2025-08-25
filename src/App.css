@@ -46,7 +46,7 @@ ul{
 form{
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  /*width: 50vw;*/
 }
 form *{
   margin-bottom: 10px;
@@ -54,14 +54,14 @@ form *{
 .subDiv{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /*width: 100%;*/
   margin: 10px 0;
   border-radius: 10px;
   border: solid white 1px;
   padding: 5px;
 }
 table{
-  width: 50vw;
+  /*width: 50vw;*/
   margin-top: 20px;
   overflow: scroll;
 }

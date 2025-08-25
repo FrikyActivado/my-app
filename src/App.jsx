@@ -1,15 +1,12 @@
-import Formulario from "./Componentes/form";
-import './App.css'
+import Crud from "./Componentes/crud";
+import "./App.css";
 
-function App(){
-return (
+function App() {
+  return (
     <div>
-        <Formulario/>
+      <Crud />
     </div>
-);
-
+  );
 }
-
-
 
 export default App;
