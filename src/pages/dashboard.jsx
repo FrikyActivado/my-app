@@ -1,4 +1,5 @@
 import Tabla from "../Componentes/tabla";
+import Card from "../Componentes/card";
 import { Outlet } from "react-router";
 import { UserProvider } from "../providers/UserContext";
 
@@ -14,7 +15,7 @@ function Dashboard() {
           Agregar usuario
         </a>
       </div>
-      <Tabla></Tabla>
+      <Card></Card>
     </UserProvider>
   );
 }

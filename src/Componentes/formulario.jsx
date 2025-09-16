@@ -9,45 +9,45 @@ function Formulario() {
         onSubmit={updating ? actualizarUsuario : agregarUsuario}
         className="flex flex-col"
       >
-        <input type="hidden" name="ID" />
-        <label htmlFor="Nombre" className="my2-2">
-          Nombre
-        </label>
-        <input
-          type="text"
-          name="Nombre"
-          id="Nombre"
-          className="border-gray-400 border-2 rounded-xl bg-gray-700 text-center"
-          required
-        />
+        <div className="flex flex-col grow">
+          <input type="hidden" name="ID" />
+          <label htmlFor="Nombre" className="my-2">
+            Nombre
+          </label>
+          <input
+            type="text"
+            name="Nombre"
+            id="Nombre"
+            className="border-gray-400 border-2 rounded-xl bg-gray-700 text-center"
+            required
+          />
 
-        <label htmlFor="email" className="my-2">
-          Email
-        </label>
-        <input
-          type="email"
-          name="Correo"
-          id="email"
-          autoComplete="email"
-          className="border-gray-400 border-2 rounded-xl bg-gray-700 text-center
+          <label htmlFor="email" className="my-2">
+            Email
+          </label>
+          <input
+            type="email"
+            name="Correo"
+            id="email"
+            autoComplete="email"
+            className="border-gray-400 border-2 rounded-xl bg-gray-700 text-center
           "
-          required
-        />
+            required
+          />
 
-        <label htmlFor="date" className="my2-2">
-          Fecha de Nacimiento
-        </label>
-        <input
-          type="date"
-          name="Fecha"
-          id="date"
-          className="border-gray-400 border-2 rounded-xl bg-gray-700 text-center
+          <label htmlFor="date" className="my-2">
+            Fecha de Nacimiento
+          </label>
+          <input
+            type="date"
+            name="Fecha"
+            id="date"
+            className="border-gray-400 border-2 rounded-xl bg-gray-700  placeholder:text-center text-center
           "
-          required
-        />
+            required
+          />
 
-        <div className="flex flex-col">
-          <label htmlFor="User" className="my2-2">
+          <label htmlFor="User" className="my-2">
             Nombre de Usuario
           </label>
           <input
@@ -59,7 +59,7 @@ function Formulario() {
             required
           />
 
-          <label htmlFor="Pass" className="my2-2">
+          <label htmlFor="Pass" className="my-2">
             Contraseña
           </label>
           <input
@@ -70,18 +70,18 @@ function Formulario() {
             "
             required
           />
-        </div>
 
-        <button
-          type="submit"
-          className={
-            updating
-              ? "cursor-pointer my-2 rounded-xl p-2 bg-green-900 hover:bg-green-500"
-              : "cursor-pointer my-2 rounded-xl p-2 bg-blue-900 hover:bg-blue-500"
-          }
-        >
-          {updating ? "Actualizar" : "Registrar"}
-        </button>
+          <button
+            type="submit"
+            className={
+              updating
+                ? "cursor-pointer my-2 rounded-xl p-2 bg-green-900 hover:bg-green-500"
+                : "cursor-pointer my-2 rounded-xl p-2 bg-blue-900 hover:bg-blue-500"
+            }
+          >
+            {updating ? "Actualizar" : "Registrar"}
+          </button>
+        </div>
       </form>
     </>
   );
