@@ -8,75 +8,36 @@ function Card() {
     cargarUsuarios();
   }, []);
   return (
-    <div className="grid grid-cols-1">
+    <div className="flex">
       {users.map((user) => (
-        <div className="flex gap-2 rounded-2xl mt-2 group">
-          <div className="grow">
-            <div className="flex flex-col items-start  m-2">
+        <div className="rounded-2xl m-2 group bg-animated-gradient before:bg-inverse p-3 w-4xl">
+          <div className="">
+            <div className="flex flex-col items-start m-2">
               <span className="hidden" key={user._id}></span>
-              <h3>
-                <strong> Nombre:</strong> {user.name}
-              </h3>
-              <h3>
-                <strong> Correo:</strong> {user.email}
-              </h3>
-              <h3>
-                <strong> Fecha de Nacimiento:</strong> {user.dob.split("T")[0]}
-              </h3>
+              <h2 className="text-4xl">{user.name}</h2>
+              <p>{user.email}</p>
+              <time>{user.dob.split("T")[0]}</time>
             </div>
-            <div className="flex flex-col items-start  m-2">
-              <h3>
-                <strong>Nombre de Usuario:</strong> {user.username}
-              </h3>
-              <h3 className="text-wrap wrap-anywhere">
-                <strong>Contraseña:</strong> {user.password}
-              </h3>
+            <div className="flex flex-col items-start m-2">
+              <h2 className="">Usuario:</h2>
+              <p>{user.username}</p>
+              <h2 className="">Contraseña: </h2>
+              <p className="">*****</p>
             </div>
           </div>
-          <div className=" opacity-0 flex overflow-hidden rounded-br-2xl rounded-tr-2xl group-hover:opacity-100 transition-opacity delay-75 duration-300">
+          <div className="opacity-0 flex group-hover:opacity-100 transition-opacity delay-75 duration-300 justify-between">
             <button
               onClick={() => rellenarFormulario(user._id)}
-              className="bg-green-700 hover:bg-green-500 cursor-pointer p-2"
+              className="bg-green-700 hover:bg-green-500 cursor-pointer rounded size-10 p-2"
             >
-              <span className="material-symbols-outlined text-white">edit</span>
+              <span class="material-symbols-outlined">edit</span>
             </button>
             <button
               onClick={() => eliminarUsuario(user._id)}
-              className="bg-red-700 hover:bg-red-500 cursor-pointer"
+              className="bg-red-700 hover:bg-red-500 cursor-pointer  rounded size-10 p-2"
             >
-              Eliminar
+              <span class="material-symbols-outlined">delete</span>
             </button>
-          </div>
-          <div
-            class="
-    relative group z-0 
-    flex gap-2 p-4 rounded-2xl mt-2 text-white
-    overflow-hidden
-    
-    /* 1. Fondo base del div */
-    bg-[linear-gradient(var(--color-card))]
-    
-    /* 2. Creación y posicionamiento del pseudoelemento */
-    before:content-[''] 
-    before:absolute 
-    before:inset-0
-    
-    /* 3. Estilo del pseudoelemento (el que se mostrará en hover) */
-    before:bg-[linear-gradient(var(--color-card-inverse))]
-    
-    /* 4. Estado inicial y transición */
-    before:opacity-0 
-    before:transition-opacity 
-    before:duration-500
-    
-    /* 5. Estado durante el hover en el 'group' */
-    group-hover:before:opacity-100
-    
-    /* 6. Z-index para ponerlo detrás del contenido */
-    before:z-[-1]
-  "
-          >
-            <span class="relative z-10">Pasa el cursor sobre mí</span>
           </div>
         </div>
       ))}

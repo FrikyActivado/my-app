@@ -1,27 +1,30 @@
 @import "tailwindcss";
 
 @theme{
-  --color-card: 65deg,  var(--color-gray-700), var(--color-gray-900);
-  --color-card-inverse: 65deg, var(--color-gray-900), var(--color-gray-700);
+  --color-card: 45deg,  var(--color-gray-700), var(--color-gray-900);
+  --color-card-inverse: 45deg, var(--color-gray-900), var(--color-gray-700);
 }
 
-/* Este es el "lienzo" con su primera capa de pintura */
 .bg-animated-gradient {
   background-image: linear-gradient(var(--color-card));
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
 }
 
-/* Aquí creamos y definimos la "capa mágica" que NO está en el HTML */
+
 .bg-animated-gradient::before {
-  content: ''; /* ¡Esto es lo que la crea! */
-  position: absolute; /* Esto la pega "dentro" y encima del div */
-  inset: 0; /* Hace que ocupe todo el espacio del div */
-  
-  background-image: linear-gradient(var(--color-card-inverse)); /* Su color */
-  opacity: 0; /* Es invisible al inicio */
-  transition: opacity 500ms ease-in-out; /* Su animación */
+  content: ''; 
+  position: absolute; 
+  inset: 0; 
+  z-index: -1;
+  background-image: linear-gradient(var(--color-card-inverse)); 
+  opacity: 0;
+  transition: opacity 500ms ease-in-out; 
+  border-radius: var(--radius-2xl);
 }
 
-/* Al pasar el ratón por el div (group), la capa mágica se hace visible */
-.group:hover .bg-animated-gradient::before {
+
+.bg-animated-gradient:hover::before {
   opacity: 1;
 }
